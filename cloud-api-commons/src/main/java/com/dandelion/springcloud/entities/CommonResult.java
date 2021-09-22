@@ -24,4 +24,8 @@ public class CommonResult<T> {
         this(code,message,null);
     }
 
+    public static CommonResult success(Integer code,String message){
+        return new CommonResult(code,message);
+    }
+
 }

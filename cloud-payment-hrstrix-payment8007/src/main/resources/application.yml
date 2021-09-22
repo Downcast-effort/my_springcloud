@@ -12,7 +12,7 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
   instance:
-    instance-id: payment8007
+    instance-id: cloud-provider-hrstrix-payment8007
     prefer-ip-address: true
     # eureka客户端向服务端发送心跳的时间间隔，默认是30
     lease-renewal-interval-in-seconds: 5
