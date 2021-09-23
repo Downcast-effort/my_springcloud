@@ -2,8 +2,6 @@ package com.dandelion.springcloud.controller;
 
 import com.dandelion.springcloud.entities.CommonResult;
 import com.dandelion.springcloud.service.MyDemoService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,9 +27,6 @@ public class MyDemoController {
      * @param id
      * @return
      */
-    @HystrixCommand(fallbackMethod = "testHrstrixTimeoutHandler",commandProperties = {
-            @HystrixProperty(name  = "execution.isolation.thread.timeoutInMilliseconds",value = "5000")
-    })
     @GetMapping("/hystirx/timeout/{id}")
     public CommonResult<String> testTimeOut(@PathVariable Integer id){
         String result = demoService.testHrstrixTimeout(id);

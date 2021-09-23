@@ -16,9 +16,12 @@ logging:
   level:
     com.dandelion.springcloud.service.PaymentOrderService: debug
 
+
 feign:
   httpclient:
     connection-timeout: 2000
+  hystrix:
+    enabled: true
 
 ribbon:
   ReadTimeOut: 3000
