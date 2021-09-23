@@ -6,9 +6,6 @@ package com.dandelion.springcloud.service;
  * @date 2021/7/29 19:11
  */
 
-import lombok.extern.slf4j.Slf4j;
-import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.BlockingQueue;
