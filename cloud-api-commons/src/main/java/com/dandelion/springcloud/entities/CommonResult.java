@@ -27,5 +27,7 @@ public class CommonResult<T> {
     public static CommonResult success(Integer code,String message){
         return new CommonResult(code,message);
     }
-
+    public static CommonResult fail(Integer code,String message){
+        return new CommonResult(code,message);
+    }
 }
