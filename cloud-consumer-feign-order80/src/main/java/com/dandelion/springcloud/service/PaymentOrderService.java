@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author zhanghab
  * @date 2021/9/6
  * @description:
+ * Feign服务降级
  **/
 @Component
-@FeignClient(value = "CLOUD-PAYMENT-SERVICE")
+@FeignClient(value = "CLOUD-PAYMENT-SERVICE",fallback = PaymentFallbackService.class)
 public interface PaymentOrderService {
 
     @GetMapping(value = "/payment/get/{id}")
