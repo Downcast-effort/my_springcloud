@@ -3,7 +3,6 @@ package com.dandelion.springcloud.controller;
 import com.dandelion.springcloud.entities.CommonResult;
 import com.dandelion.springcloud.entities.Payment;
 import com.dandelion.springcloud.service.PaymentService;
-import com.netflix.discovery.converters.Auto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

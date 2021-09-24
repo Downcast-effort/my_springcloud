@@ -35,7 +35,11 @@ public class MyDemoService {
     }
 
 
-
+    /**
+     * 测试正常的方法
+     * @param id
+     * @return
+     */
     public String testHystrix(Integer id){
         return "test hystrix" + Thread.currentThread().getName() + "payment info,id:" + id;
     }
