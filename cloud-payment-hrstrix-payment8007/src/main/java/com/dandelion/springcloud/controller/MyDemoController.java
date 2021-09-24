@@ -42,4 +42,15 @@ public class MyDemoController {
         return "test hystrix" + Thread.currentThread().getName() + "payment info, sys error";
     }
 
+
+    /**
+     * 测试服务熔断就方法
+     * @param id
+     * @return
+     */
+    @GetMapping("/hystrix/circuit/{id}")
+    public String testCircuitOfHystrix(@PathVariable Integer id){
+        return demoService.paymentCircuitBreaker(id);
+    }
+
 }

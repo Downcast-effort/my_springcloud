@@ -26,6 +26,7 @@
 
 
         <module>cloud-api-commons</module>
+        <module>cloud-consumer-hystrix-dashboard9001</module>
 
     </modules>
 <!--    <packaging>pom</packaging>-->
