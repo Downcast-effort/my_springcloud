@@ -1,0 +1,37 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: payment-routh            #路由id
+#          uri: http://localhost:8001   #匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service   #lb://servicename 是springcloud gateway在微服务中自动为我们创建的负载聚恒uri
+          predicates:
+              - Path=/payment/get/**     #断言，路由相匹配的进行路由
+        - id: payment-routh1
+#            uri: http://localhost:8001
+            uri: lb://cloud-payment-service
+            predicates:
+              - Path=/payment/lb/**
+#              - After=2021-09-26T17:28:56.059+08:00[Asia/Shanghai]
+#              - Cookie=username,dandelion
+#              - Header=X-Request-Id,\d+
+#              - Host=www.baidu.com
+#              - Method=GET
+#              - Query=username, \d+
+            filters:
+              - AddRequestParamter=X-Request-Id,1024
+      discovery:
+        locator:
+          enabled: true   #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka7001.com:7001/eureka
