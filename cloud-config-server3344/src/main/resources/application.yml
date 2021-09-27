@@ -1,0 +1,22 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Downcast-effort/my_springcloud_config.git
+          search-paths: my_springcloud_config
+#          username: xxxxx
+#          password: xxxxx
+          skip-ssl-validation: true
+          force-pull: true
+          timeout: 200000
+          default-label: main
+      label: main
+eureka:
+  client:
+    service-url:
+      defaultzone: http://localhost:7001/eureka
