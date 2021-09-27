@@ -16,7 +16,19 @@ spring:
           timeout: 200000
           default-label: main
       label: main
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:
       defaultzone: http://localhost:7001/eureka
+
+#暴露监控点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
