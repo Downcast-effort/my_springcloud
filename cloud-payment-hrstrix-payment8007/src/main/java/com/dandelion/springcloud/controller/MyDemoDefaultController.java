@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 
 
-@RestController
+@RestController("/default")
 @Slf4j
 @DefaultProperties(defaultFallback = "testHrstrixTimeoutHandler")
 public class MyDemoDefaultController {
@@ -30,7 +30,7 @@ public class MyDemoDefaultController {
      * @param id
      * @return
      */
-    @GetMapping("/hystirx/timeout/{id}")
+    @GetMapping("/hystirx/demo/timeout/{id}")
     @HystrixCommand
     public CommonResult<String> testTimeOut(@PathVariable Integer id){
         String result = demoService.testHrstrixTimeout(id);
